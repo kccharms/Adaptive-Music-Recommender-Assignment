@@ -1,0 +1,262 @@
+.app-shell {
+  width: min(1060px, calc(100% - 2.5rem));
+  margin: 3rem auto 4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.hero,
+.control-panel,
+.result-panel,
+.rules-panel {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(36, 35, 31, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(36, 35, 31, 0.06);
+  padding: 1.5rem;
+  animation: rise 600ms ease both;
+}
+
+.hero {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2.75rem;
+}
+
+.kicker {
+  margin: 0;
+  color: #e05a3f;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 13ch;
+  margin: 0.45rem 0 0.7rem;
+  font-size: clamp(2.5rem, 6vw, 5.2rem);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.intro {
+  max-width: 55ch;
+  color: #65645e;
+}
+
+.control-panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: end;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.control-group {
+  display: grid;
+  gap: 0.45rem;
+}
+
+label {
+  color: #3b3934;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+select,
+.toggle {
+  min-height: 2.7rem;
+  border: 1px solid rgba(36, 35, 31, 0.18);
+  border-radius: 8px;
+  background: #fff;
+  font: inherit;
+}
+
+select {
+  padding: 0.55rem 0.7rem;
+  color: #24231f;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.8rem;
+  cursor: pointer;
+}
+
+.toggle input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #e05a3f;
+}
+
+.result-panel {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.85fr) 1.4fr;
+  gap: 1rem;
+}
+
+.top-pick {
+  padding: 1.25rem;
+  border: 1px solid rgba(36, 35, 31, 0.1);
+  border-radius: 8px;
+  background: #eef3ef;
+}
+
+.top-pick h2 {
+  margin: 0.25rem 0 0.45rem;
+  font-size: 2rem;
+  line-height: 1.05;
+}
+
+.meta {
+  margin: 0.2rem 0;
+  color: #65645e;
+  font-size: 0.88rem;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.9rem;
+}
+
+.chip {
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: #dce9e2;
+  color: #315949;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.playlist-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.track-card {
+  padding: 1rem;
+  border: 1px solid rgba(36, 35, 31, 0.1);
+  border-radius: 8px;
+  background: #fff;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.track-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 16px rgba(36, 35, 31, 0.1);
+}
+
+.rank {
+  margin: 0;
+  color: #e05a3f;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.track-card h3 {
+  margin: 0.25rem 0 0.4rem;
+  font-size: 1.1rem;
+}
+
+.score {
+  margin: 0.55rem 0 0;
+  color: #315949;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.play-button {
+  margin-top: 0.75rem;
+  border: 1px solid #e05a3f;
+  border-radius: 7px;
+  padding: 0.38rem 0.7rem;
+  color: #fffaf7;
+  background: #e05a3f;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.play-button:hover {
+  background: #bd422d;
+  transform: translateY(-1px);
+}
+
+.play-button span {
+  display: inline-block;
+  min-width: 1rem;
+}
+
+.featured-play {
+  padding: 0.55rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+.play-button:focus-visible,
+select:focus-visible,
+.toggle:has(input:focus-visible) {
+  outline: 3px solid rgba(39, 119, 107, 0.35);
+  outline-offset: 2px;
+}
+
+.rules-panel h2 {
+  margin: 0 0 0.6rem;
+}
+
+.rules-panel p {
+  margin: 0.4rem 0;
+  color: #65645e;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .control-panel,
+  .result-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-shell {
+    width: min(100% - 1.25rem, 560px);
+    margin: 1.25rem auto 2rem;
+  }
+
+  .hero,
+  .control-panel,
+  .result-panel,
+  .rules-panel {
+    padding: 1.1rem;
+  }
+
+  .hero {
+    padding: 1.5rem 1.1rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .playlist-grid {
+    grid-template-columns: 1fr;
+  }
+}
