@@ -1,3 +1,7 @@
+# Charmaine J. Opiso - CS4D #
+# August 24, 2026 #
+
+
 # Adaptive Music Recommender (React + Vite)
 
 This app is a small OPM hit personalization demo built with React and Vite. It recommends
